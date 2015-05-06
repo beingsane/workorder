@@ -34,9 +34,7 @@ AppAsset::register($this);
             ]);
 			
 			$items = [
-				['label' => 'Home', 'url' => ['/site/index']],
-				['label' => 'About', 'url' => ['/site/about']],
-				['label' => 'Contact', 'url' => ['/site/contact']],
+				['label' => 'Home', 'url' => ['/']],
 				Yii::$app->user->isGuest ?
 					['label' => 'Login', 'url' => ['/user/login']] :
 					['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
