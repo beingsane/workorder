@@ -110,6 +110,12 @@ a.desc:after {
   color: #fff;
 }
 
+a:active,
+a:focus {
+	outline:0px !important;
+	-webkit-appearance:none;
+}
+
 /* -------------------------------------------------------------------------- */
 
 .navbar-main .navbar-brand > div {

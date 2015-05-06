@@ -53,7 +53,6 @@ class SiteController extends Controller
 		{
 			$this->redirect(['user/login']);
 		}
-		
-        return $this->render('index');
+		$this->redirect(['work-order/index']);
     }
 }
