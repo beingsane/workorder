@@ -116,6 +116,16 @@ a:focus {
 	-webkit-appearance:none;
 }
 
+html,
+body {
+	font-size: 12px;
+}
+
+h6 {
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+
 /* -------------------------------------------------------------------------- */
 
 .navbar-main .navbar-brand > div {
@@ -128,6 +138,45 @@ a:focus {
 
 .work-order-view .table th {
 	background: #f4f4f4;
+}
+
+
+
+.navbar-tables .container {
+	padding: 0px;
+	width: 100%;
+}
+
+.navbar-tables .navbar-collapse {
+	padding: 0px;
+}
+
+.navbar-tables .navbar-header {
+	width: 100%;
+	margin: 0px;
+}
+
+.navbar-tables .navbar-collapse {
+	width: 100%;
+	margin: 0px;
+}
+
+.navbar-tables ul {
+	margin: 0px;
+}
+
+.navbar-tables ul li {
+	width: 160px;
+}
+
+.navbar-tables ul li a {
+	padding: 10px;
+	border-right: 1px solid #ccc;
+}
+
+
+.nav-tables {
+	margin-bottom: 20px;
 }
 
 /* -------------------------------------------------------------------------- */

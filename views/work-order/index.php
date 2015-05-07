@@ -12,9 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="work-order-index">
 
-	<br/>
-    <h3><?= Html::encode('Table: Work Orders') ?></h3>
-	<br/>
+    <h6><?= Html::encode('Table: Work Orders') ?></h6>
 	
 	
 	<div class="panel panel-default">
@@ -47,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			'client_name',
 			'work_type',
             'priority',
-            'assigned__taken_by',
+			'assigned__taken_by:text:Assigned',
             'date_required',
             // 'date',
             // 'company',
@@ -99,11 +97,11 @@ $this->params['breadcrumbs'][] = $this->title;
 					'info' => function ($url, $model, $key) {
 						$html = '';
 						
-						$html .= Html::a('Customers Details', ['client/view', 'client_name' => $model->client_name], ['data-pjax' => '0']);
+						$html .= Html::a('Customers Details', ['client/view', 'client_name' => $model->client_name], ['class' => 'text-nowrap', 'data-pjax' => '0']);
 						$html .= '<br/>';
-						$html .= Html::a('Proofing Details', ['work-order/view', 'id' => $model->wo], ['data-pjax' => '0']);
+						$html .= Html::a('Proofing Details', ['work-order/view', 'id' => $model->wo], ['class' => 'text-nowrap', 'data-pjax' => '0']);
 						$html .= '<br/>';
-						$html .= Html::a('History Details', ['work-order/index', 'WorkOrderSearch[client_name]' => $model->client_name], ['data-pjax' => '0']);
+						$html .= Html::a('History Details', ['work-order/index', 'WorkOrderSearch[client_name]' => $model->client_name], ['class' => 'text-nowrap', 'data-pjax' => '0']);
 						
 						return $html;
 					},

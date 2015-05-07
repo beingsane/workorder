@@ -50,11 +50,37 @@ AppAsset::register($this);
             NavBar::end();
         ?>
 
+		
         <div class="container">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
-            <?= $content ?>
+			<div class="row">
+				<div class="col-md-2">
+					<div class="nav-tables">
+						<a href="">Ad Specifications</a><br/>
+						<a href="">Company</a><br/>
+						<a href="">Customers</a><br/>
+						<a href="">Delivery</a><br/>
+						<a href="">Forward</a><br/>
+						<a href="">Photo Details</a><br/>
+						<a href="">Photo Locations</a><br/>
+						<a href="">Priority Level</a><br/>
+						<a href="">Proofing</a><br/>
+						<a href="">Spec Information</a><br/>
+						<a href="">Status</a><br/>
+						<a href="">Users</a><br/>
+						<a href="">Work Order type</a><br/>
+						<a href="">Work Orders</a><br/>
+						<a href="">User Level Permissions</a><br/>
+						<a href="">User Levels</a><br/>
+						<a href="">History</a><br/>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<?= $content ?>
+				</div>
+			</div>
         </div>
     </div>
 
