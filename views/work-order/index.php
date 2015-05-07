@@ -99,17 +99,11 @@ $this->params['breadcrumbs'][] = $this->title;
 					'info' => function ($url, $model, $key) {
 						$html = '';
 						
-						$html .= Html::a('Customers Details', ['client/view', 'client_name' => $model->client_name], [
-							'data-pjax' => '0',
-						]);
+						$html .= Html::a('Customers Details', ['client/view', 'client_name' => $model->client_name], ['data-pjax' => '0']);
 						$html .= '<br/>';
-						$html .= Html::a('Proofing Details', ['work-order/view', 'id' => $model->wo], [
-							'data-pjax' => '0',
-						]);
+						$html .= Html::a('Proofing Details', ['work-order/view', 'id' => $model->wo], ['data-pjax' => '0']);
 						$html .= '<br/>';
-						$html .= Html::a('History Details', ['work-order/index', 'WorkOrderSearch[client_name]' => $model->client_name], [
-							'data-pjax' => '0',
-						]);
+						$html .= Html::a('History Details', ['work-order/index', 'WorkOrderSearch[client_name]' => $model->client_name], ['data-pjax' => '0']);
 						
 						return $html;
 					},
@@ -119,16 +113,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
 				'class' => 'yii\grid\ActionColumn',
 				'template' => '{view}<br/>{update}<br/>{delete}',
-				'buttons' => [
-					'update' => function ($url, $model, $key) {
-						return Html::a('<span class="glyphicon glyphicon-pencil"></span>', $url, [
-							'title' => 'Edit',
-							'data-pjax' => '0',
-						]);
-					}
-				]
-			],
-			
+			]
         ],
     ]); ?>
 
