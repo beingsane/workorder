@@ -18,11 +18,12 @@ class NullEmptyBehavior extends Behavior
     public function beforeSave()
     {
         $model = $this->owner;
-		$insert = $model->getIsNewRecord();
 		foreach ($model->attributes as $key => $value)
 		{
 			if (!$value)
+			{
 				$model->setAttribute($key, null);
+			}
 		}
     }
 }
