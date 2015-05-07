@@ -55,7 +55,7 @@ use Yii;
  * @property string $status
  * @property string $article_name
  * @property string $article_location
- * @property string $user_level
+ * @property string $storage
  */
 class WorkOrder extends \yii\db\ActiveRecord
 {
@@ -75,7 +75,7 @@ class WorkOrder extends \yii\db\ActiveRecord
         return [
             [['company_id'], 'integer'],
             [['other_ad_information', 'other'], 'string'],
-            [['date', 'company', 'work_type', 'priority', 'client_name', 'assigned__taken_by', 'spec_information', 'date_required', 'sale_date', 'photo_details', 'photo_location', 'photo_upload', 'ad_specification', 'add_color', 'proof_to_client_by', 'send_proof_via', 'via_other', 'files_to_printer_by', 'catalogue_sale_name', 'sale_time', 'location', 'sale_phone_1', 'sale_phone_2', 'sale_phone_3', 'auctioneer', 'auctioneer_phone', 'auctioneer_cell', 'ringman_1', 'ringman_1_phone', 'ringman_1_cell', 'ringman_2', 'ringman_2_phone', 'ringman_2_cell', 'ringman_3', 'ringman_3_phone', 'ringman_3_cell', 'ringman_4', 'ringman_4_phone', 'ringman_4_cell', 'other_sales_staff', 'other_title_page_info', 'forward', 'status', 'article_name', 'article_location', 'user_level'], 'string', 'max' => 50]
+            [['date', 'company', 'work_type', 'priority', 'client_name', 'assigned__taken_by', 'spec_information', 'date_required', 'sale_date', 'photo_details', 'photo_location', 'photo_upload', 'ad_specification', 'add_color', 'proof_to_client_by', 'send_proof_via', 'via_other', 'files_to_printer_by', 'catalogue_sale_name', 'sale_time', 'location', 'sale_phone_1', 'sale_phone_2', 'sale_phone_3', 'auctioneer', 'auctioneer_phone', 'auctioneer_cell', 'ringman_1', 'ringman_1_phone', 'ringman_1_cell', 'ringman_2', 'ringman_2_phone', 'ringman_2_cell', 'ringman_3', 'ringman_3_phone', 'ringman_3_cell', 'ringman_4', 'ringman_4_phone', 'ringman_4_cell', 'other_sales_staff', 'other_title_page_info', 'forward', 'status', 'article_name', 'article_location', 'storage'], 'string', 'max' => 50]
         ];
     }
 	
@@ -133,7 +133,7 @@ class WorkOrder extends \yii\db\ActiveRecord
             'status' => 'Status',
             'article_name' => 'Article Name',
             'article_location' => 'Article Location',
-            'user_level' => 'User Level',
+            'storage' => 'Storage',
         ];
     }
 }

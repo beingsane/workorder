@@ -32,7 +32,7 @@ class WorkOrderSearch extends WorkOrder
 					'ringman_2_phone', 'ringman_2_cell', 'ringman_3', 'ringman_3_phone',
 					'ringman_3_cell', 'ringman_4', 'ringman_4_phone', 'ringman_4_cell',
 					'other_sales_staff', 'other_title_page_info', 'forward', 'other',
-					'status', 'article_name', 'article_location', 'user_level'
+					'status', 'article_name', 'article_location', 'storage'
 				],
 				'safe'
 			],
@@ -120,7 +120,7 @@ class WorkOrderSearch extends WorkOrder
             ->andFilterWhere(['like', 'status', $this->status])
             ->andFilterWhere(['like', 'article_name', $this->article_name])
             ->andFilterWhere(['like', 'article_location', $this->article_location])
-            ->andFilterWhere(['like', 'user_level', ($this->user_level == null ? 'No' : $this->user_level)]);
+            ->andFilterWhere(['like', 'storage', ($this->storage == null ? 'No' : $this->storage)]);
 		$query->orderBy('wo');
 		
         return $dataProvider;

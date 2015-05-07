@@ -106,7 +106,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'article_location')->textInput(['maxlength' => 50]) ?>
 
-    <?= $form->field($model, 'user_level')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'storage')->textInput(['maxlength' => 50]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

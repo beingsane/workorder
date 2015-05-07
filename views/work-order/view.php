@@ -76,7 +76,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'status',
             'article_name',
             'article_location',
-            'user_level',
+            'storage',
         ],
     ]) ?>
 
