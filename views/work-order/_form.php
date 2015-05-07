@@ -22,7 +22,7 @@ use app\helpers\DropDownItems;
 
     <?= $form->field($model, 'company')->dropDownList(DropDownItems::getItems('app\models\Company', 'company')) ?>
 
-    <?= $form->field($model, 'work_type')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'work_type')->dropDownList(DropDownItems::getItems('app\models\WorkOrderType', 'work_order_type')) ?>
 
     <?= $form->field($model, 'priority')->textInput(['maxlength' => 50]) ?>
 
