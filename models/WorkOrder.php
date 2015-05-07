@@ -71,7 +71,7 @@ class WorkOrder extends \yii\db\ActiveRecord
 	public function behaviors()
 	{
 		return [
-			['class' => NullEmptyBehavior::className()] 
+			['class' => NullEmptyBehavior::className()],
 		];
 	}
 
