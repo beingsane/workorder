@@ -3,7 +3,6 @@
 namespace app\models;
 
 use Yii;
-use app\behaviors\NullEmptyBehavior;
 
 /**
  * This is the model class for table "work_orders".
@@ -67,14 +66,14 @@ class WorkOrder extends \yii\db\ActiveRecord
     {
         return 'work_orders';
     }
-	
+
 	/**
      * @inheritdoc
      */
 	public function behaviors()
 	{
 		return [
-			['class' => NullEmptyBehavior::className()],
+			['class' => \app\behaviors\NullEmptyBehavior::className()],
 		];
 	}
 
