@@ -22,6 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			<a data-toggle="collapse" href="#work-orders-filter">
 				Filter
 			</a>
+			<?= Html::a('Reset filter', ['index'], ['class' => 'pull-right']) ?>
 		</div>
 		<div id="work-orders-filter" class="panel-collapse collapse out">
 			<div class="panel-body">

@@ -79,11 +79,6 @@ class WorkOrder extends \yii\db\ActiveRecord
         ];
     }
 	
-	public static function find()
-	{
-		return parent::find()->andWhere(['user_level' => 'Yes']);
-	}
-
     /**
      * @inheritdoc
      */

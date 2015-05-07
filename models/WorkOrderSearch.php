@@ -120,8 +120,9 @@ class WorkOrderSearch extends WorkOrder
             ->andFilterWhere(['like', 'status', $this->status])
             ->andFilterWhere(['like', 'article_name', $this->article_name])
             ->andFilterWhere(['like', 'article_location', $this->article_location])
-            ->andFilterWhere(['like', 'user_level', $this->user_level]);
-
+            ->andFilterWhere(['like', 'user_level', ($this->user_level == null ? 'No' : $this->user_level)]);
+		$query->orderBy('wo');
+		
         return $dataProvider;
     }
 }
