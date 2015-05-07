@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use app\behaviors\DropDownItemsBehavior;
 
 /**
  * This is the model class for table "company".

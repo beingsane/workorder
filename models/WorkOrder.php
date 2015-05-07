@@ -68,6 +68,9 @@ class WorkOrder extends \yii\db\ActiveRecord
         return 'work_orders';
     }
 	
+	/**
+     * @inheritdoc
+     */
 	public function behaviors()
 	{
 		return [

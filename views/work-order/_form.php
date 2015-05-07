@@ -3,6 +3,8 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+use app\helpers\DropDownItems;
+
 /* @var $this yii\web\View */
 /* @var $model app\models\WorkOrder */
 /* @var $form yii\widgets\ActiveForm */
@@ -12,9 +14,13 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <div class="form-group">
+        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+    </div>
+
     <?= $form->field($model, 'date')->textInput(['maxlength' => 50]) ?>
 
-    <?= $form->field($model, 'company')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'company')->dropDownList(['items' => DropDownItems::getItems('app\models\Company', 'company')]) ?>
 
     <?= $form->field($model, 'work_type')->textInput(['maxlength' => 50]) ?>
 
