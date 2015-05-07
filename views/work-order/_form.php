@@ -20,7 +20,7 @@ use app\helpers\DropDownItems;
 
     <?= $form->field($model, 'date')->textInput(['maxlength' => 50]) ?>
 
-    <?= $form->field($model, 'company')->dropDownList(['items' => DropDownItems::getItems('app\models\Company', 'company')]) ?>
+    <?= $form->field($model, 'company')->dropDownList(DropDownItems::getItems('app\models\Company', 'company')) ?>
 
     <?= $form->field($model, 'work_type')->textInput(['maxlength' => 50]) ?>
 

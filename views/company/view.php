@@ -24,9 +24,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-
+	
     <?= DetailView::widget([
         'model' => $model,
+		'formatter' => ['class' => 'yii\i18n\Formatter', 'nullDisplay' => false],
         'attributes' => [
             'id',
             'company',
