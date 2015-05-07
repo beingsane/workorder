@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			<a data-toggle="collapse" href="#work-orders-filter">
 				Filter
 			</a>
-			<?= Html::a('Reset filter', ['index'], ['class' => 'pull-right']) ?>
+			<?= Html::a('<span class="text-muted">Reset filter</span>', ['index'], ['class' => 'pull-right']) ?>
 		</div>
 		<div id="work-orders-filter" class="panel-collapse collapse out">
 			<div class="panel-body">
@@ -40,6 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
+		'formatter' => ['class' => 'yii\i18n\Formatter', 'nullDisplay' => false],
         'columns' => [
             'wo',
             'status',
@@ -106,7 +107,7 @@ $this->params['breadcrumbs'][] = $this->title;
 							'data-pjax' => '0',
 						]);
 						$html .= '<br/>';
-						$html .= Html::a('Customers Details', ['work-order/index', 'WorkOrderSearch[client_name]' => $model->client_name], [
+						$html .= Html::a('History Details', ['work-order/index', 'WorkOrderSearch[client_name]' => $model->client_name], [
 							'data-pjax' => '0',
 						]);
 						
