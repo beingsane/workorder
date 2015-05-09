@@ -30,7 +30,7 @@ use app\helpers\DropDownItems;
 
     <?= $form->field($model, 'priority')->dropDownList(DropDownItems::getItems('app\models\PriorityLevel', 'priority_level')) ?>
 
-    <?= $form->field($model, 'assigned__taken_by')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'assigned__taken_by')->dropDownList(DropDownItems::getUsers()) ?>
 
     <?= $form->field($model, 'spec_information')->dropDownList(DropDownItems::getItems('app\models\SpecInformation', 'spec_information')) ?>
 
@@ -112,7 +112,7 @@ use app\helpers\DropDownItems;
 
     <?= $form->field($model, 'article_location')->textInput(['maxlength' => 50]) ?>
 
-    <?= $form->field($model, 'storage')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'storage')->dropDownList(['No' => 'No', 'Yes' => 'Yes']) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

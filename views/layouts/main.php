@@ -61,12 +61,9 @@ AppAsset::register($this);
 						<a href="<?= Url::to(['ad-specification/']) ?>">Ad Specifications</a><br/>
 						<a href="<?= Url::to(['company/']) ?>">Company</a><br/>
 						<a href="<?= Url::to(['customer/']) ?>">Customers</a><br/>
-						<a href="">- Delivery</a><br/>
-						<a href="">- Forward</a><br/>
 						<a href="<?= Url::to(['photo-details/']) ?>">Photo Details</a><br/>
 						<a href="<?= Url::to(['photo-location/']) ?>">Photo Locations</a><br/>
 						<a href="<?= Url::to(['priority-level/']) ?>">Priority Level</a><br/>
-						<a href="">- Proofing</a><br/>
 						<a href="<?= Url::to(['spec-information/']) ?>">Spec Information</a><br/>
 						<a href="<?= Url::to(['status/']) ?>">Status</a><br/>
 						<a href="">-| Users</a><br/>

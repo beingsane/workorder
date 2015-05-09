@@ -17,4 +17,23 @@ class DropDownItems
 		
 		return $result;
 	}
+	
+	public static function getUsers()
+	{
+		$className = 'dektrium\user\models\User';
+		$users = $className::find()
+			->join('LEFT JOIN', 'profile', 'profile.user_id = user.id')
+			->orderBy([new \yii\db\Expression('IF(profile.name IS NOT NULL AND profile.name != "", profile.name, user.username)')])
+			->all();
+		
+		$result = [];
+		$result[''] = '- select -';
+		foreach($users as $user)
+		{
+			$value = ($user->profile->name ? $user->profile->name : $user->username);
+			$result[$value] = $value;
+		}
+		
+		return $result;
+	}
 }
