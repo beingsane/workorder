@@ -12,7 +12,14 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="work-order-index">
 
-    <h6><?= Html::encode($this->title) ?></h6>
+	<div class="table-info">
+		<div class="pull-left"><?= Html::a('Add', ['create'], ['class' => 'btn btn-success']) ?></div>
+		<div class="title pull-right"><?= Html::encode($this->title) ?></div>
+		
+		<div class="clearfix"></div>
+	</div>
+	
+	<?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 	
 	
 	<div class="panel panel-default">
@@ -29,13 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		</div>
 	</div>
 	
-
-    <p>
-        <?= Html::a('Add', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-	<br/>
-	<br/>
-
+	
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
 		'formatter' => ['class' => 'yii\i18n\Formatter', 'nullDisplay' => false],
