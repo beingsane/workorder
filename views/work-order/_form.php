@@ -38,7 +38,7 @@ use app\helpers\DropDownItems;
 
     <?= $form->field($model, 'sale_date')->textInput(['maxlength' => 50]) ?>
 
-    <?= $form->field($model, 'photo_details')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'photo_details')->dropDownList(DropDownItems::getItems('app\models\PhotoDetails', 'photo_details')) ?>
 
     <?= $form->field($model, 'photo_location')->textInput(['maxlength' => 50]) ?>
 
