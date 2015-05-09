@@ -38,7 +38,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'shipping_instructions')->textInput(['maxlength' => 50]) ?>
 
-    <?= $form->field($model, 'contract_expires')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'contract_expires')->widget(\yii\jui\DatePicker::className(), ['dateFormat' => 'MM-dd-yyyy'])->textInput(['maxlength' => 50]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

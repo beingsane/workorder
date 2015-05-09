@@ -19,8 +19,6 @@ $this->params['breadcrumbs'][] = $this->title;
 		<div class="clearfix"></div>
 	</div>
 	
-	<?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-	
 	
 	<div class="panel panel-default">
 		<div class="panel-heading">

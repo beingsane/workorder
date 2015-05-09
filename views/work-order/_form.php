@@ -18,7 +18,7 @@ use app\helpers\DropDownItems;
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
-    <?= $form->field($model, 'date')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'date')->widget(\yii\jui\DatePicker::className(), ['dateFormat' => 'MM-dd-yyyy'])->textInput(['maxlength' => 50]) ?>
 
     <?= $form->field($model, 'status')->dropDownList(DropDownItems::getItems('app\models\Status', 'status')) ?>
 
@@ -34,9 +34,9 @@ use app\helpers\DropDownItems;
 
     <?= $form->field($model, 'spec_information')->dropDownList(DropDownItems::getItems('app\models\SpecInformation', 'spec_information')) ?>
 
-    <?= $form->field($model, 'date_required')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'date_required')->widget(\yii\jui\DatePicker::className(), ['dateFormat' => 'MM-dd-yyyy'])->textInput(['maxlength' => 50]) ?>
 
-    <?= $form->field($model, 'sale_date')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'sale_date')->widget(\yii\jui\DatePicker::className(), ['dateFormat' => 'MM-dd-yyyy'])->textInput(['maxlength' => 50]) ?>
 
     <?= $form->field($model, 'photo_details')->dropDownList(DropDownItems::getItems('app\models\PhotoDetails', 'photo_details')) ?>
 
@@ -50,7 +50,7 @@ use app\helpers\DropDownItems;
 
     <?= $form->field($model, 'other_ad_information')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'proof_to_client_by')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'proof_to_client_by')->widget(\yii\jui\DatePicker::className(), ['dateFormat' => 'MM-dd-yyyy'])->textInput(['maxlength' => 50]) ?>
 
     <?= $form->field($model, 'send_proof_via')->textInput(['maxlength' => 50]) ?>
 
@@ -106,13 +106,13 @@ use app\helpers\DropDownItems;
 
     <?= $form->field($model, 'forward')->textInput(['maxlength' => 50]) ?>
 
-    <?= $form->field($model, 'other')->textarea(['rows' => 6]) ?>
-
     <?= $form->field($model, 'article_name')->textInput(['maxlength' => 50]) ?>
 
     <?= $form->field($model, 'article_location')->textInput(['maxlength' => 50]) ?>
 
     <?= $form->field($model, 'storage')->dropDownList(['No' => 'No', 'Yes' => 'Yes']) ?>
+
+    <?= $form->field($model, 'other')->textarea(['rows' => 6]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

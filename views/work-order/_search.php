@@ -17,7 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'wo') ?>
 
-    <?= $form->field($model, 'date') ?>
+    <?= $form->field($model, 'date')->widget(\yii\jui\DatePicker::className(), ['dateFormat' => 'MM-dd-yyyy'])->textInput() ?>
 
     <?= $form->field($model, 'status') ?>
 
@@ -31,10 +31,11 @@ use yii\widgets\ActiveForm;
 	
     <?= $form->field($model, 'assigned__taken_by') ?>
 
-	<?= $form->field($model, 'sale_date') ?>
-
+	<?= $form->field($model, 'sale_date')->widget(\yii\jui\DatePicker::className(), ['dateFormat' => 'MM-dd-yyyy'])->textInput() ?>
 	
-
+	
+	
+	
     <?php // echo $form->field($model, 'spec_information') ?>
 
     <?php // echo $form->field($model, 'date_required') ?>
