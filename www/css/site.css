@@ -126,6 +126,10 @@ h6 {
 	margin-bottom: 20px;
 }
 
+.breadcrumb {
+	border: 1px solid #ddd;
+}
+
 /* -------------------------------------------------------------------------- */
 
 .navbar-main .navbar-brand > div {
