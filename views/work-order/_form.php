@@ -40,7 +40,7 @@ use app\helpers\DropDownItems;
 
     <?= $form->field($model, 'photo_details')->dropDownList(DropDownItems::getItems('app\models\PhotoDetails', 'photo_details')) ?>
 
-    <?= $form->field($model, 'photo_location')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'photo_location')->dropDownList(DropDownItems::getItems('app\models\PhotoLocation', 'photo_locations')) ?>
 
     <?= $form->field($model, 'photo_upload')->textInput(['maxlength' => 50]) ?>
 

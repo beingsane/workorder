@@ -64,7 +64,7 @@ AppAsset::register($this);
 						<a href="">- Delivery</a><br/>
 						<a href="">- Forward</a><br/>
 						<a href="<?= Url::to(['photo-details/']) ?>">Photo Details</a><br/>
-						<a href="">- Photo Locations</a><br/>
+						<a href="<?= Url::to(['photo-location/']) ?>">Photo Locations</a><br/>
 						<a href="<?= Url::to(['priority-level/']) ?>">Priority Level</a><br/>
 						<a href="">- Proofing</a><br/>
 						<a href="<?= Url::to(['spec-information/']) ?>">Spec Information</a><br/>
