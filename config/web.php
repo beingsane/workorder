@@ -8,12 +8,16 @@ $config = [
     'bootstrap' => ['log'],
 	'modules' => [
 		'user' => [
+			// source code in this module was changed!
 			'class' => 'dektrium\user\Module',
 			'enableUnconfirmedLogin' => false,
 			'enableRegistration' => false,
 			'enableConfirmation' => false,
 			'confirmWithin' => 21600,
 			'admins' => ['admin']
+		],
+		'admin' => [
+			'class' => 'mdm\admin\Module',
 		],
 	],
     'components' => [
@@ -27,7 +31,7 @@ $config = [
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
-        ],
+			],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
@@ -48,7 +52,18 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+		'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+        ],
     ],
+	'as access' => [
+		'class' => 'mdm\admin\components\AccessControl',
+		'allowActions' => [
+			'site/*',
+			'user/*',
+			// 'admin/*',		// uncomment this line if you want to get access to role management
+		]
+	],
     'params' => $params,
 ];
 

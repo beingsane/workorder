@@ -56,27 +56,18 @@ AppAsset::register($this);
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
 			<div class="row">
-				<div class="col-md-2">
-					<div class="nav-tables">
-						<a href="<?= Url::to(['ad-specification/']) ?>">Ad Specifications</a><br/>
-						<a href="<?= Url::to(['company/']) ?>">Company</a><br/>
-						<a href="<?= Url::to(['customer/']) ?>">Customers</a><br/>
-						<a href="<?= Url::to(['photo-details/']) ?>">Photo Details</a><br/>
-						<a href="<?= Url::to(['photo-location/']) ?>">Photo Locations</a><br/>
-						<a href="<?= Url::to(['priority-level/']) ?>">Priority Levels</a><br/>
-						<a href="<?= Url::to(['spec-information/']) ?>">Spec Information</a><br/>
-						<a href="<?= Url::to(['status/']) ?>">Status</a><br/>
-						<a href="">-| Users</a><br/>
-						<a href="<?= Url::to(['work-order-type/']) ?>">Work Order Type</a><br/>
-						<a href="<?= Url::to(['work-order/']) ?>">Work Orders</a><br/>
-						<a href="">-- User Level Permissions</a><br/>
-						<a href="">-- User Levels</a><br/>
-						<a href="">-| History</a><br/>
+				<?php if (\Yii::$app->user->isGuest) : ?>
+					<div class="col-md-12">
+						<?= $content ?>
 					</div>
-				</div>
-				<div class="col-md-10">
-					<?= $content ?>
-				</div>
+				<?php else: ?>
+					<div class="col-md-2">
+						<?= $this->render('_left_menu.php') ?>
+					</div>
+					<div class="col-md-10">
+						<?= $content ?>
+					</div>
+				<?php endif; ?>
 			</div>
         </div>
     </div>
