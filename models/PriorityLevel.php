@@ -21,6 +21,16 @@ class PriorityLevel extends \yii\db\ActiveRecord
         return 'priority_level';
     }
 
+	/**
+     * @inheritdoc
+     */
+	public function behaviors()
+	{
+		return [
+			['class' => \app\behaviors\NullEmptyBehavior::className()],
+		];
+	}
+
     /**
      * @inheritdoc
      */

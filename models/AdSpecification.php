@@ -21,6 +21,16 @@ class AdSpecification extends \yii\db\ActiveRecord
         return 'ad_specifications';
     }
 
+	/**
+     * @inheritdoc
+     */
+	public function behaviors()
+	{
+		return [
+			['class' => \app\behaviors\NullEmptyBehavior::className()],
+		];
+	}
+
     /**
      * @inheritdoc
      */

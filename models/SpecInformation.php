@@ -21,6 +21,16 @@ class SpecInformation extends \yii\db\ActiveRecord
         return 'spec_information';
     }
 
+	/**
+     * @inheritdoc
+     */
+	public function behaviors()
+	{
+		return [
+			['class' => \app\behaviors\NullEmptyBehavior::className()],
+		];
+	}
+
     /**
      * @inheritdoc
      */

@@ -21,6 +21,16 @@ class Status extends \yii\db\ActiveRecord
         return 'status';
     }
 
+	/**
+     * @inheritdoc
+     */
+	public function behaviors()
+	{
+		return [
+			['class' => \app\behaviors\NullEmptyBehavior::className()],
+		];
+	}
+
     /**
      * @inheritdoc
      */

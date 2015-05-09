@@ -34,6 +34,16 @@ class Customer extends \yii\db\ActiveRecord
         return 'customers';
     }
 
+	/**
+     * @inheritdoc
+     */
+	public function behaviors()
+	{
+		return [
+			['class' => \app\behaviors\NullEmptyBehavior::className()],
+		];
+	}
+
     /**
      * @inheritdoc
      */

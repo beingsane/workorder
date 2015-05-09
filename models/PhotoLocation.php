@@ -20,6 +20,16 @@ class PhotoLocation extends \yii\db\ActiveRecord
         return 'photo_locations';
     }
 
+	/**
+     * @inheritdoc
+     */
+	public function behaviors()
+	{
+		return [
+			['class' => \app\behaviors\NullEmptyBehavior::className()],
+		];
+	}
+
     /**
      * @inheritdoc
      */
