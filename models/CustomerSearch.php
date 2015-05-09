@@ -18,7 +18,7 @@ class CustomerSearch extends Customer
     public function rules()
     {
         return [
-            [['id', 'user_level'], 'integer'],
+            [['id'], 'integer'],
             [['account_number', 'name', 'contact', 'address', 'city', 'prov_state', 'postal_zip', 'telephone', 'fax', 'email', 'website', 'billing_instructions', 'shipping_instructions', 'contract_expires'], 'safe'],
         ];
     }
@@ -57,7 +57,6 @@ class CustomerSearch extends Customer
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'user_level' => $this->user_level,
         ]);
 
         $query->andFilterWhere(['like', 'account_number', $this->account_number])

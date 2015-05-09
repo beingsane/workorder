@@ -22,7 +22,6 @@ use Yii;
  * @property string $billing_instructions
  * @property string $shipping_instructions
  * @property string $contract_expires
- * @property integer $user_level
  */
 class Customer extends \yii\db\ActiveRecord
 {
@@ -50,7 +49,6 @@ class Customer extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_level'], 'integer'],
             [['account_number', 'name', 'contact', 'address', 'city', 'prov_state', 'postal_zip', 'telephone', 'fax', 'email', 'website', 'billing_instructions', 'shipping_instructions', 'contract_expires'], 'string', 'max' => 50]
         ];
     }
@@ -76,7 +74,6 @@ class Customer extends \yii\db\ActiveRecord
             'billing_instructions' => 'Billing Instructions',
             'shipping_instructions' => 'Shipping Instructions',
             'contract_expires' => 'Contract Expires',
-            'user_level' => 'User Level',
         ];
     }
 }
