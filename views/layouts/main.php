@@ -68,7 +68,7 @@ AppAsset::register($this);
 						<a href="<?= Url::to(['priority-level/']) ?>">Priority Level</a><br/>
 						<a href="">- Proofing</a><br/>
 						<a href="">- Spec Information</a><br/>
-						<a href="">- Status</a><br/>
+						<a href="<?= Url::to(['status/']) ?>">Status</a><br/>
 						<a href="">-| Users</a><br/>
 						<a href="<?= Url::to(['work-order-type/']) ?>">Work Order Type</a><br/>
 						<a href="<?= Url::to(['work-order/']) ?>">Work Orders</a><br/>

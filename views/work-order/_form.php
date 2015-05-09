@@ -20,7 +20,7 @@ use app\helpers\DropDownItems;
 
     <?= $form->field($model, 'date')->textInput(['maxlength' => 50]) ?>
 
-    <?= $form->field($model, 'status')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'status')->dropDownList(DropDownItems::getItems('app\models\Status', 'status')) ?>
 
     <?= $form->field($model, 'company')->dropDownList(DropDownItems::getItems('app\models\Company', 'company')) ?>
 
