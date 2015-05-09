@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="work-order-index">
 
-    <h6><?= Html::encode('Table: Work Orders') ?></h6>
+    <h6><?= Html::encode($this->title) ?></h6>
 	
 	
 	<div class="panel panel-default">
