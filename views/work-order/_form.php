@@ -20,13 +20,15 @@ use app\helpers\DropDownItems;
 
     <?= $form->field($model, 'date')->textInput(['maxlength' => 50]) ?>
 
+    <?= $form->field($model, 'status')->textInput(['maxlength' => 50]) ?>
+
     <?= $form->field($model, 'company')->dropDownList(DropDownItems::getItems('app\models\Company', 'company')) ?>
+
+    <?= $form->field($model, 'client_name')->textInput(['maxlength' => 50]) ?>
 
     <?= $form->field($model, 'work_type')->dropDownList(DropDownItems::getItems('app\models\WorkOrderType', 'work_order_type')) ?>
 
-    <?= $form->field($model, 'priority')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'client_name')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'priority')->dropDownList(DropDownItems::getItems('app\models\PriorityLevel', 'priority_level')) ?>
 
     <?= $form->field($model, 'assigned__taken_by')->textInput(['maxlength' => 50]) ?>
 
@@ -105,8 +107,6 @@ use app\helpers\DropDownItems;
     <?= $form->field($model, 'forward')->textInput(['maxlength' => 50]) ?>
 
     <?= $form->field($model, 'other')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'status')->textInput(['maxlength' => 50]) ?>
 
     <?= $form->field($model, 'article_name')->textInput(['maxlength' => 50]) ?>
 

@@ -65,16 +65,16 @@ AppAsset::register($this);
 						<a href="">- Forward</a><br/>
 						<a href="">- Photo Details</a><br/>
 						<a href="">- Photo Locations</a><br/>
-						<a href="">- Priority Level</a><br/>
+						<a href="<?= Url::to(['priority-level/']) ?>">Priority Level</a><br/>
 						<a href="">- Proofing</a><br/>
 						<a href="">- Spec Information</a><br/>
 						<a href="">- Status</a><br/>
-						<a href="">- Users</a><br/>
-						<a href="<?= Url::to(['work-order-type/']) ?>">Work Order type</a><br/>
+						<a href="">-| Users</a><br/>
+						<a href="<?= Url::to(['work-order-type/']) ?>">Work Order Type</a><br/>
 						<a href="<?= Url::to(['work-order/']) ?>">Work Orders</a><br/>
-						<a href="">- User Level Permissions</a><br/>
-						<a href="">- User Levels</a><br/>
-						<a href="">- History</a><br/>
+						<a href="">-- User Level Permissions</a><br/>
+						<a href="">-- User Levels</a><br/>
+						<a href="">-| History</a><br/>
 					</div>
 				</div>
 				<div class="col-md-10">
