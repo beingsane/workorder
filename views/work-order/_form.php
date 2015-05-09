@@ -12,7 +12,7 @@ use app\helpers\DropDownItems;
 
 <div class="work-order-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
@@ -42,7 +42,7 @@ use app\helpers\DropDownItems;
 
     <?= $form->field($model, 'photo_location')->dropDownList(DropDownItems::getItems('app\models\PhotoLocation', 'photo_locations')) ?>
 
-    <?= $form->field($model, 'photo_upload')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'photo_file')->fileInput() ?>
 
     <?= $form->field($model, 'ad_specification')->dropDownList(DropDownItems::getItems('app\models\AdSpecification', 'ad_specifications')) ?>
 

@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
 		'formatter' => ['class' => 'yii\i18n\Formatter', 'nullDisplay' => false],
         'columns' => [
-            'wo',
+            'id',
             'status',
 			'client_name',
 			'work_type',
@@ -98,7 +98,7 @@ $this->params['breadcrumbs'][] = $this->title;
 						
 						$html .= Html::a('Customers Details', ['client/view', 'client_name' => $model->client_name], ['class' => 'text-nowrap', 'data-pjax' => '0']);
 						$html .= '<br/>';
-						$html .= Html::a('Proofing Details', ['work-order/view', 'id' => $model->wo], ['class' => 'text-nowrap', 'data-pjax' => '0']);
+						$html .= Html::a('Proofing Details', ['work-order/view', 'id' => $model->id], ['class' => 'text-nowrap', 'data-pjax' => '0']);
 						$html .= '<br/>';
 						$html .= Html::a('History Details', ['work-order/index', 'WorkOrderSearch[client_name]' => $model->client_name], ['class' => 'text-nowrap', 'data-pjax' => '0']);
 						

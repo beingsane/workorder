@@ -15,7 +15,7 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'wo') ?>
+    <?= $form->field($model, 'id') ?>
 
     <?= $form->field($model, 'date')->widget(\yii\jui\DatePicker::className(), ['dateFormat' => 'MM-dd-yyyy'])->textInput() ?>
 

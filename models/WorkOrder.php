@@ -3,11 +3,13 @@
 namespace app\models;
 
 use Yii;
+use yii\web\UploadedFile;
+use yii\helpers\Url;
 
 /**
  * This is the model class for table "work_orders".
  *
- * @property integer $wo
+ * @property integer $id
  * @property string $date
  * @property string $company
  * @property string $work_type
@@ -59,6 +61,9 @@ use Yii;
  */
 class WorkOrder extends \yii\db\ActiveRecord
 {
+	public static $uploadDirectory = 'pics';
+	public $photo_file;
+	
     /**
      * @inheritdoc
      */
@@ -94,7 +99,7 @@ class WorkOrder extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'wo' => 'WO',
+            'id' => 'ID',
             'date' => 'Date',
             'company' => 'Company',
             'work_type' => 'Work Type',
@@ -145,4 +150,53 @@ class WorkOrder extends \yii\db\ActiveRecord
             'storage' => 'Storage',
         ];
     }
+	
+	public function beforeSave($insert)
+    {
+        $file = UploadedFile::getInstance($this, 'photo_file');
+        if ($file)
+        {
+            $photo_upload = $file->name;
+			$filePath = $this->getFilePath($photo_upload);
+			
+            if (!$insert && $this->photo_upload)
+			{
+				$prevFilePath = $this->getFilePath($this->photo_upload);
+                if (file_exists($prevFilePath)) unlink($prevFilePath);
+            }
+            
+			$i = 2;
+			while (file_exists($filePath))
+			{
+				$basename = basename($photo_upload, '.'.$file->extension);
+				$photo_upload = $basename.'('.$i.')' .'.'.$file->extension;
+				$filePath = $this->getFilePath($photo_upload);
+				$i++;
+			}
+            
+            $this->photo_upload = $photo_upload;
+            
+            // save file
+            if (!is_dir(dirname($filePath))) {
+                mkdir(dirname($filePath), 0755, true);
+            }
+            $saved = $file->saveAs($filePath);
+            if (!$saved) {
+                $this->addError('photo_file', 'File upload error');
+                return false;
+            }
+        }
+        
+        return parent::beforeSave($insert);
+    }
+	
+	public function getFilePath($photo_upload)
+	{
+		return Yii::getAlias('@webroot') .'/' .self::$uploadDirectory .'/' .$photo_upload;
+	}
+	
+	public function getFileUrl($photo_upload)
+	{
+		return Url::home() .self::$uploadDirectory .'/' .$photo_upload;
+	}
 }

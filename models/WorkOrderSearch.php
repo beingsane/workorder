@@ -18,7 +18,7 @@ class WorkOrderSearch extends WorkOrder
     public function rules()
     {
         return [
-            [['wo'], 'integer'],
+            [['id'], 'integer'],
             [
 				[
 					'date', 'company', 'work_type', 'priority',
@@ -71,7 +71,7 @@ class WorkOrderSearch extends WorkOrder
             return $dataProvider;
         }
 
-        $query->andFilterWhere(['wo' => $this->wo]);
+        $query->andFilterWhere(['id' => $this->id]);
 
         $query->andFilterWhere(['like', 'date', $this->date])
             ->andFilterWhere(['like', 'company', $this->company])
@@ -121,7 +121,7 @@ class WorkOrderSearch extends WorkOrder
             ->andFilterWhere(['like', 'article_name', $this->article_name])
             ->andFilterWhere(['like', 'article_location', $this->article_location])
             ->andFilterWhere(['like', 'storage', ($this->storage == null ? 'No' : $this->storage)]);
-		$query->orderBy('wo');
+		$query->orderBy('id');
 		
         return $dataProvider;
     }

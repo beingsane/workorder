@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\WorkOrder */
 
-$this->title = $model->wo;
+$this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Work Orders', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -15,9 +15,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->wo], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
 		&nbsp;&nbsp;
-        <?= Html::a('Delete', ['delete', 'id' => $model->wo], [
+        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<?= Html::a('Customers Details', ['client/view', 'client_name' => $model->client_name], ['data-pjax' => '0']) ?>
 		&nbsp;&nbsp;
-		<?= Html::a('Proofing Details', ['work-order/view', 'id' => $model->wo], ['data-pjax' => '0']) ?>
+		<?= Html::a('Proofing Details', ['work-order/view', 'id' => $model->id], ['data-pjax' => '0']) ?>
 		&nbsp;&nbsp;
 		<?= Html::a('History Details', ['work-order/index', 'WorkOrderSearch[client_name]' => $model->client_name], ['data-pjax' => '0']) ?>
 		
@@ -54,7 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	?>
 	
 	<table class="table table-bordered">
-		<tr><?= show_attributes($model, ['wo', 'date', 'status']) ?></tr>
+		<tr><?= show_attributes($model, ['id', 'date', 'status']) ?></tr>
 	</table>
 	
 	<?php $labels = $model->attributeLabels(); ?>
@@ -74,7 +74,17 @@ $this->params['breadcrumbs'][] = $this->title;
 	</table>
 	
 	<table class="table table-bordered">
-		<tr><?= show_attributes($model, ['photo_details', 'photo_location', 'photo_upload']) ?></tr>
+		<tr>
+			<?= show_attributes($model, ['photo_details', 'photo_location']) ?>
+			
+			<?php $attribute = 'photo_upload'; ?>
+			<th class="col-md-2">
+				<?= ($attribute ? Html::encode($labels[$attribute]) : '') ?>
+			</th>
+			<td class="col-md-2">
+				<?= ($attribute ? '<a href="'.Html::encode($model->getFileUrl($model->$attribute)).'">'.Html::encode($model->$attribute).'</a>' : '') ?>
+			</td>
+		</tr>
 		<tr><?= show_attributes($model, ['ad_specification', 'add_color', 'files_to_printer_by']) ?></tr>
 	</table>
 	
