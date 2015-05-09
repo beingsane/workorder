@@ -32,7 +32,7 @@ use app\helpers\DropDownItems;
 
     <?= $form->field($model, 'assigned__taken_by')->textInput(['maxlength' => 50]) ?>
 
-    <?= $form->field($model, 'spec_information')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'spec_information')->dropDownList(DropDownItems::getItems('app\models\SpecInformation', 'spec_information')) ?>
 
     <?= $form->field($model, 'date_required')->textInput(['maxlength' => 50]) ?>
 
