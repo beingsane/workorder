@@ -44,7 +44,7 @@ use app\helpers\DropDownItems;
 
     <?= $form->field($model, 'photo_upload')->textInput(['maxlength' => 50]) ?>
 
-    <?= $form->field($model, 'ad_specification')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'ad_specification')->dropDownList(DropDownItems::getItems('app\models\AdSpecification', 'ad_specifications')) ?>
 
     <?= $form->field($model, 'add_color')->textInput(['maxlength' => 50]) ?>
 

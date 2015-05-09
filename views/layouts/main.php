@@ -58,7 +58,7 @@ AppAsset::register($this);
 			<div class="row">
 				<div class="col-md-2">
 					<div class="nav-tables">
-						<a href="">- Ad Specifications</a><br/>
+						<a href="<?= Url::to(['ad-specification/']) ?>">Ad Specifications</a><br/>
 						<a href="<?= Url::to(['company/']) ?>">Company</a><br/>
 						<a href="<?= Url::to(['customer/']) ?>">Customers</a><br/>
 						<a href="">- Delivery</a><br/>
@@ -67,7 +67,7 @@ AppAsset::register($this);
 						<a href="">- Photo Locations</a><br/>
 						<a href="<?= Url::to(['priority-level/']) ?>">Priority Level</a><br/>
 						<a href="">- Proofing</a><br/>
-						<a href="">- Spec Information</a><br/>
+						<a href="<?= Url::to(['spec-information/']) ?>">Spec Information</a><br/>
 						<a href="<?= Url::to(['status/']) ?>">Status</a><br/>
 						<a href="">-| Users</a><br/>
 						<a href="<?= Url::to(['work-order-type/']) ?>">Work Order Type</a><br/>

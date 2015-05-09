@@ -130,6 +130,10 @@ h6 {
 	border: 1px solid #ddd;
 }
 
+select.form-control {
+	padding: 6px 8px;
+}
+
 /* -------------------------------------------------------------------------- */
 
 .navbar-main .navbar-brand > div {
