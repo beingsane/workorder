@@ -12,7 +12,7 @@ use app\controllers\BaseCrudController;
  */
 class StatusController extends BaseCrudController
 {
-    public function init()
+	public function init()
 	{
 		$this->modelClass = Status::className();
 		$this->searchModelClass = StatusSearch::className();

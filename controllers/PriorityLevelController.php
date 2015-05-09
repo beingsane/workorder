@@ -12,7 +12,7 @@ use app\controllers\BaseCrudController;
  */
 class PriorityLevelController extends BaseCrudController
 {
-    public function init()
+	public function init()
 	{
 		$this->modelClass = PriorityLevel::className();
 		$this->searchModelClass = PriorityLevelSearch::className();

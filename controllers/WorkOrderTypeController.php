@@ -12,7 +12,7 @@ use app\controllers\BaseCrudController;
  */
 class WorkOrderTypeController extends BaseCrudController
 {
-    public function init()
+	public function init()
 	{
 		$this->modelClass = WorkOrderType::className();
 		$this->searchModelClass = WorkOrderTypeSearch::className();
