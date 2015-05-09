@@ -164,4 +164,12 @@ select.form-control {
 	padding: 6px 0px;
 }
 
+.customer-details .table th {
+	background: #f8f8f8;
+}
+
+.customer-details .table td {
+	background: #fff;
+}
+
 /* -------------------------------------------------------------------------- */

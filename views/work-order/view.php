@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<?= Html::a('Customers Details', ['client/view', 'client_name' => $model->client_name], ['data-pjax' => '0']) ?>
+		<?= Html::a('Customers Details', ['customer/view-details', 'order_id' => $model->id, 'customer_name' => $model->client_name], ['data-pjax' => '0']) ?>
 		&nbsp;&nbsp;
 		<?= Html::a('Proofing Details', ['work-order/view', 'id' => $model->id], ['data-pjax' => '0']) ?>
 		&nbsp;&nbsp;
