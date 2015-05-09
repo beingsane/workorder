@@ -24,7 +24,7 @@ use app\helpers\DropDownItems;
 
     <?= $form->field($model, 'company')->dropDownList(DropDownItems::getItems('app\models\Company', 'company')) ?>
 
-    <?= $form->field($model, 'client_name')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'client_name')->dropDownList(DropDownItems::getItems('app\models\Customer', 'name', 'name')) ?>
 
     <?= $form->field($model, 'work_type')->dropDownList(DropDownItems::getItems('app\models\WorkOrderType', 'work_order_type')) ?>
 

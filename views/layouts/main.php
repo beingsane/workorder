@@ -60,7 +60,7 @@ AppAsset::register($this);
 					<div class="nav-tables">
 						<a href="">- Ad Specifications</a><br/>
 						<a href="<?= Url::to(['company/']) ?>">Company</a><br/>
-						<a href="">- Customers</a><br/>
+						<a href="<?= Url::to(['customer/']) ?>">Customers</a><br/>
 						<a href="">- Delivery</a><br/>
 						<a href="">- Forward</a><br/>
 						<a href="">- Photo Details</a><br/>

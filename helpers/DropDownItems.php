@@ -4,9 +4,9 @@ namespace app\helpers;
 
 class DropDownItems
 {
-    public static function getItems($className, $attribute)
+    public static function getItems($className, $attribute, $orderBy = 'id')
 	{
-		$items = $className::find()->all();
+		$items = $className::find()->orderBy($orderBy)->all();
 		
 		$result = [];
 		foreach($items as $item)
