@@ -45,6 +45,7 @@ class CustomerSearch extends Customer
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+			'sort' => ['defaultOrder' => ['name' => SORT_ASC]],
         ]);
 
         $this->load($params);
@@ -73,7 +74,7 @@ class CustomerSearch extends Customer
             ->andFilterWhere(['like', 'billing_instructions', $this->billing_instructions])
             ->andFilterWhere(['like', 'shipping_instructions', $this->shipping_instructions])
             ->andFilterWhere(['like', 'contract_expires', $this->contract_expires]);
-
+		
         return $dataProvider;
     }
 }

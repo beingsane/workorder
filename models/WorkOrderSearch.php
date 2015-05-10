@@ -61,6 +61,7 @@ class WorkOrderSearch extends WorkOrder
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+			'sort' => ['defaultOrder' => ['id' => SORT_DESC]],
         ]);
 
         $this->load($params);
@@ -121,7 +122,6 @@ class WorkOrderSearch extends WorkOrder
             ->andFilterWhere(['like', 'article_name', $this->article_name])
             ->andFilterWhere(['like', 'article_location', $this->article_location])
             ->andFilterWhere(['like', 'storage', ($this->storage == null ? 'No' : $this->storage)]);
-		$query->orderBy('id');
 		
         return $dataProvider;
     }

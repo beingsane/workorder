@@ -6,6 +6,7 @@ use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\Url;
 
 /**
  * BaseCrudController implements the CRUD actions
@@ -14,6 +15,7 @@ class BaseCrudController extends Controller
 {
 	protected $modelClass = '';
 	protected $searchModelClass = '';
+	
 	
     public function behaviors()
     {
@@ -33,6 +35,8 @@ class BaseCrudController extends Controller
      */
     public function actionIndex()
     {
+		Yii::$app->session['main_page'] = Url::to(['index']);
+		
         $searchModel = new $this->searchModelClass();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -49,6 +53,8 @@ class BaseCrudController extends Controller
      */
     public function actionView($id)
     {
+		Yii::$app->session['main_page'] = Url::to(['view', 'id' => $id]);
+		
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -64,7 +70,7 @@ class BaseCrudController extends Controller
         $model = new $this->modelClass();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(Yii::$app->session['main_page']);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -83,7 +89,7 @@ class BaseCrudController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(Yii::$app->session['main_page']);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -101,7 +107,7 @@ class BaseCrudController extends Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(Yii::$app->session['index_page']);
     }
 
     /**

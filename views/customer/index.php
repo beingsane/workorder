@@ -42,6 +42,19 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'shipping_instructions',
             // 'contract_expires',
 
+			[
+				'class' => 'yii\grid\ActionColumn',
+				'template' => '{info}',
+				'buttons' => [
+					'info' => function ($url, $model, $key) {
+						$html = '';
+						
+						$html .= Html::a('Work Orders Details', ['work-order/index', 'WorkOrderSearch[client_name]' => $model->name], ['class' => 'text-nowrap', 'data-pjax' => '0']);
+						
+						return $html;
+					},
+				]
+			],
             ['class' => 'yii\grid\ActionColumn', 'template' => '{view}<br/>{update}<br/>{delete}'],
         ],
     ]); ?>

@@ -7,8 +7,9 @@ use yii\grid\GridView;
 /* @var $model app\models\Customer */
 
 $this->title = $customer_name;
-$this->params['breadcrumbs'][] = ['label' => 'Customers', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => 'Work Orders', 'url' => ['work-order/index']];
+$this->params['breadcrumbs'][] = ['label' => $order_id, 'url' => ['work-order/view', 'id' => $order_id]];
+$this->params['breadcrumbs'][] = 'Customers details - ' .$this->title;
 ?>
 <div class="customer-details">
 
@@ -36,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	
 	<br/>
 	<br/>
-	Customer:
+	Customers:
 	<br/>
 	
 	<?= GridView::widget([
@@ -52,6 +53,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'prov_state',
             'account_number',
             'telephone',
+			[
+				'class' => 'yii\grid\ActionColumn',
+				'template' => '{view}<br/>{update}<br/>{delete}',
+			],
         ],
     ]); ?>
 	
