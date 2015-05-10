@@ -11,7 +11,6 @@ use yii\widgets\ActiveForm;
 <div class="work-order-search">
 
     <?php $form = ActiveForm::begin([
-        'action' => ['index'],
         'method' => 'get',
     ]); ?>
 
@@ -33,6 +32,8 @@ use yii\widgets\ActiveForm;
 
 	<?= $form->field($model, 'sale_date')->widget(\yii\jui\DatePicker::className(), ['dateFormat' => 'MM-dd-yyyy'])->textInput() ?>
 	
+    <?= $form->field($model, 'storage')->dropDownList(['No' => 'No', 'Yes' => 'Yes']) ?>
+
 	
 	
 	
@@ -113,8 +114,6 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'article_name') ?>
 
     <?php // echo $form->field($model, 'article_location') ?>
-
-    <?php // echo $form->field($model, 'storage') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

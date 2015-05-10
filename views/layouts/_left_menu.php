@@ -42,7 +42,7 @@ function showLink($route, $text)
 			showLink('/status/', 'Status');
 			showLink('/work-order-type/', 'Work Order Type');
 			showLink('/work-order/', 'Work Orders');
-			echo '<a href="">- History</a><br/>';
+			showLink('/work-order/history', 'History');
 			echo '<br/><br/>';
 			
 			showLink('/user/admin', 'Users');
@@ -54,6 +54,7 @@ function showLink($route, $text)
 		{
 			showLink('/customer/', 'Customers');
 			showLink('/work-order/', 'Work Orders');
+			showLink('/work-order/history', 'History');
 		}
 	?>
 </div>

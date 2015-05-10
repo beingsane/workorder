@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = 'Customers details - ' .$this->title;
 	
 	<br/>
 	<br/>
-	Customers:
+	Customer:
 	<br/>
 	
 	<?= GridView::widget([
