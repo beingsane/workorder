@@ -16,6 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+		&nbsp;&nbsp;
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
@@ -23,6 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
 			]) ?>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<?= Html::a('Work Orders Details', ['work-order/index', 'WorkOrderSearch[client_name]' => $model->name], ['class' => 'text-nowrap', 'data-pjax' => '0']) ?>
     </p>
 
     <?= DetailView::widget([

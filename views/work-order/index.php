@@ -96,7 +96,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					'info' => function ($url, $model, $key) {
 						$html = '';
 						
-						$html .= Html::a('Customers Details', ['client/view', 'client_name' => $model->client_name], ['class' => 'text-nowrap', 'data-pjax' => '0']);
+						$html .= Html::a('Customers Details', ['customer/view-details', 'order_id' => $model->id, 'customer_name' => ''.$model->client_name], ['data-pjax' => '0']);
 						$html .= '<br/>';
 						$html .= Html::a('Proofing Details', ['work-order/view', 'id' => $model->id], ['class' => 'text-nowrap', 'data-pjax' => '0']);
 						$html .= '<br/>';
