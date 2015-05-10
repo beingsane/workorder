@@ -4,26 +4,9 @@ use yii\helpers\Url;
 
 function showLink($route, $text)
 {
-	$hasAccess = Yii::$app->user->can('/*');
-	if (!$hasAccess)
-	{
-		$hasAccess = Yii::$app->user->can($route);
-	}
-	
-	if (!$hasAccess)
-	{
-		$parts = explode('/', $route);
-		array_pop($parts);
-		array_push($parts, '*');
-		$commonRoute = implode('/', $parts);
-		
-		$hasAccess = Yii::$app->user->can($commonRoute);
-	}
-	
-	if ($hasAccess)
-	{
-		?><a href="<?= Url::to([$route]) ?>"><?= $text ?></a><br/><?php
-	}
+	?>
+		<a href="<?= Url::to([$route]) ?>"><?= $text ?></a><br/>
+	<?php
 }
 
 ?>

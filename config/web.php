@@ -8,7 +8,7 @@ $config = [
     'bootstrap' => ['log'],
 	'modules' => [
 		'user' => [
-			// source code in this module was changed!
+			// source code in this module has been changed!
 			'class' => 'dektrium\user\Module',
 			'enableUnconfirmedLogin' => false,
 			'enableRegistration' => false,
@@ -61,6 +61,7 @@ $config = [
 		'allowActions' => [
 			'site/*',
 			'user/*',
+			// '*',				// uncomment this line if there is no users in database yet
 			// 'admin/*',		// uncomment this line if you want to get access to role management
 		]
 	],
