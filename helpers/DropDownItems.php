@@ -6,13 +6,18 @@ class DropDownItems
 {
     public static function getItems($className, $attribute, $orderBy = 'id')
 	{
-		$items = $className::find()->orderBy($orderBy)->all();
+		$query = new \yii\db\Query();
+		$items = $query
+			->select($attribute)
+			->from($className::tableName())
+			->orderBy($orderBy)
+			->all();
 		
 		$result = [];
 		$result[''] = '- select -';
 		foreach($items as $item)
 		{
-			$result[$item->$attribute] = $item->$attribute;
+			$result[$item[$attribute]] = $item[$attribute];
 		}
 		
 		return $result;
