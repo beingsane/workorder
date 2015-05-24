@@ -166,9 +166,9 @@ class WorkOrder extends \yii\db\ActiveRecord
             }
             
 			$i = 2;
+			$basename = basename($photo_upload, '.'.$file->extension);
 			while (file_exists($filePath))
 			{
-				$basename = basename($photo_upload, '.'.$file->extension);
 				$photo_upload = $basename.'('.$i.')' .'.'.$file->extension;
 				$filePath = $this->getFilePath($photo_upload);
 				$i++;
