@@ -93,6 +93,15 @@ AppAsset::register($this);
     </footer>
 
 <?php $this->endBody() ?>
+    <script>
+        $(document).ready(function() {
+            $('.print-button').click(function() {
+                window.print();
+                $(this).blur();
+                return false;
+            });
+        });
+    </script>
 </body>
 </html>
 <?php $this->endPage() ?>

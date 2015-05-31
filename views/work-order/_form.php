@@ -65,48 +65,6 @@ use app\helpers\DropDownItems;
 
     <?= $form->field($model, 'files_to_printer_by')->textInput(['maxlength' => 50]) ?>
 
-    <?= $form->field($model, 'catalogue_sale_name')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'sale_time')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'location')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'sale_phone_1')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'sale_phone_2')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'sale_phone_3')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'auctioneer')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'auctioneer_phone')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'auctioneer_cell')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'ringman_1')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'ringman_1_phone')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'ringman_1_cell')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'ringman_2')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'ringman_2_phone')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'ringman_2_cell')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'ringman_3')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'ringman_3_phone')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'ringman_3_cell')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'ringman_4')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'ringman_4_phone')->textInput(['maxlength' => 50]) ?>
-
-    <?= $form->field($model, 'ringman_4_cell')->textInput(['maxlength' => 50]) ?>
-
     <?= $form->field($model, 'other_sales_staff')->textInput(['maxlength' => 50]) ?>
 
     <?= $form->field($model, 'other_title_page_info')->textInput(['maxlength' => 50]) ?>

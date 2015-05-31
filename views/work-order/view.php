@@ -6,17 +6,18 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\WorkOrder */
 
-$this->title = $model->id;
+$this->title = 'Work Order '.$model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Work Orders', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = $model->id;
 ?>
 <div class="work-order-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
+
+    <div class="no-print">
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-		&nbsp;&nbsp;
+        &nbsp;&nbsp;
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
@@ -24,13 +25,17 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<?= Html::a('Customers Details', ['customer/view-details', 'order_id' => $model->id, 'customer_name' => $model->client_name], ['data-pjax' => '0']) ?>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<?= Html::a('History Details', ['work-order/history', 'WorkOrderSearch[client_name]' => $model->client_name], ['class' => 'text-nowrap', 'data-pjax' => '0']) ?>
-		
-    </p>
-
+        
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <?= Html::a('Customers Details', ['customer/view-details', 'order_id' => $model->id, 'customer_name' => $model->client_name], ['data-pjax' => '0']) ?>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <?= Html::a('History Details', ['work-order/history', 'WorkOrderSearch[client_name]' => $model->client_name], ['class' => 'text-nowrap', 'data-pjax' => '0']) ?>
+        
+        <div class="text-muted no-print pull-right">
+            <?= Html::a('Print', '#', ['class' => 'text-nowrap print-button', 'data-pjax' => '0']) ?>
+        </div>
+    </div>
+    <br/>
 	
 	
 	<?php
@@ -91,7 +96,6 @@ $this->params['breadcrumbs'][] = $this->title;
 	</table>
 	
 	<table class="table table-bordered">
-		<tr><?= show_attributes($model, ['catalogue_sale_name', 'sale_time', 'location']) ?></tr>
 		<tr>
 			<?php $attribute = 'other_ad_information'; ?>
 			<th class="col-md-2">
@@ -101,15 +105,6 @@ $this->params['breadcrumbs'][] = $this->title;
 				<?= ($attribute ? nl2br(Html::encode($model->$attribute)) : '') ?>
 			</td>
 		</tr>
-	</table>
-	
-	<table class="table table-bordered">
-		<tr><?= show_attributes($model, ['sale_phone_1', 'sale_phone_2', 'sale_phone_3']) ?></tr>
-		<tr><?= show_attributes($model, ['auctioneer', 'auctioneer_phone', 'auctioneer_cell']) ?></tr>
-		<tr><?= show_attributes($model, ['ringman_1', 'ringman_1_phone', 'ringman_1_cell']) ?></tr>
-		<tr><?= show_attributes($model, ['ringman_2', 'ringman_2_phone', 'ringman_2_cell']) ?></tr>
-		<tr><?= show_attributes($model, ['ringman_3', 'ringman_3_phone', 'ringman_3_cell']) ?></tr>
-		<tr><?= show_attributes($model, ['ringman_4', 'ringman_4_phone', 'ringman_4_cell']) ?></tr>
 	</table>
 	
 	<table class="table table-bordered">

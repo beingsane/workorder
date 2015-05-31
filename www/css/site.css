@@ -121,6 +121,11 @@ body {
 	font-size: 12px;
 }
 
+h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
 h6 {
 	margin-top: 0px;
 	margin-bottom: 20px;
@@ -132,6 +137,22 @@ h6 {
 
 select.form-control {
 	padding: 6px 8px;
+}
+
+
+
+.breadcrumb > li + .back-link::before {
+    content: "";
+}
+
+.text-muted a {
+    color: inherit;
+}
+
+ .print-button {
+    display: inline-block;
+    margin-top: 8px;
+    float:left;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -172,8 +193,24 @@ select.form-control {
 	background: #fff;
 }
 
-.breadcrumb > li + .back-link::before {
-    content: "";
+/* -------------------------------------------------------------------------- */
+
+@media print {
+    .no-print {
+        display: none;
+    }
+    
+    .navbar, .breadcrumb, .nav-tables, .footer, a {
+        display: none;
+    }
+    
+    .wrap > .container {
+        padding-top: 0px;
+    }
+    
+    .col-md-2 {
+        width: 16.6667%;
+    }
 }
 
 /* -------------------------------------------------------------------------- */
