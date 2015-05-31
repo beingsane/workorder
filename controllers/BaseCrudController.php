@@ -35,7 +35,7 @@ class BaseCrudController extends Controller
      */
     public function actionIndex()
     {
-		Yii::$app->session['main_page'] = Url::to(['index']);
+        Url::remember(Url::to([$this->id.'/']));
 		
         $searchModel = new $this->searchModelClass();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
@@ -53,8 +53,6 @@ class BaseCrudController extends Controller
      */
     public function actionView($id)
     {
-		Yii::$app->session['main_page'] = Url::to(['view', 'id' => $id]);
-		
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -70,7 +68,7 @@ class BaseCrudController extends Controller
         $model = new $this->modelClass();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(Yii::$app->session['main_page']);
+            return $this->redirect(Url::previous());
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -89,7 +87,7 @@ class BaseCrudController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(Yii::$app->session['main_page']);
+            return $this->redirect(Url::previous());
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -107,7 +105,7 @@ class BaseCrudController extends Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(Yii::$app->session['index_page']);
+        return $this->redirect(Url::previous());
     }
 
     /**

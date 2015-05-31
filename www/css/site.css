@@ -172,4 +172,8 @@ select.form-control {
 	background: #fff;
 }
 
+.breadcrumb > li + .back-link::before {
+    content: "";
+}
+
 /* -------------------------------------------------------------------------- */

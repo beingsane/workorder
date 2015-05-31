@@ -52,6 +52,20 @@ AppAsset::register($this);
 
 		
         <div class="container">
+            <?php
+                /*
+                if (Url::previous() && Url::previous() != Yii::$app->request->url)
+                {
+                    $this->params['breadcrumbs'][] = [
+                        'label' => '<span class="text-muted">Back</span>',
+                        'url' => Url::previous(),
+                        'template' => '<li class="pull-right back-link">{link}</li>',
+                        'encode' => false,
+                        'class' => 'pull-right',
+                    ];
+                }
+                */
+            ?>
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>

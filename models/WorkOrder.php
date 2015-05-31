@@ -63,6 +63,7 @@ class WorkOrder extends \yii\db\ActiveRecord
 {
 	public static $uploadDirectory = 'pics';
 	public $photo_file;
+    public $disabledFields = [];
 	
     /**
      * @inheritdoc

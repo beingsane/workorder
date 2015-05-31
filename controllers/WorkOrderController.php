@@ -21,7 +21,7 @@ class WorkOrderController extends BaseCrudController
 	
 	public function actionHistory()
 	{
-		Yii::$app->session['main_page'] = Url::to(['history']);
+		Url::remember(Url::to(['history']));
 		
         $searchModel = new $this->searchModelClass();
 		$params = Yii::$app->request->queryParams;

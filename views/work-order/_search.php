@@ -22,7 +22,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'company') ?>
 
-    <?= $form->field($model, 'client_name') ?>
+    <?
+        $field = $form->field($model, 'client_name');
+        if ($model->disabledFields['client_name'])
+            $field = $field->textInput(['disabled' => 'disabled']);
+        echo $field;
+    ?>
 
     <?= $form->field($model, 'work_type') ?>
 

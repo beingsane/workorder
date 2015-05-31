@@ -24,7 +24,14 @@ use app\helpers\DropDownItems;
 
     <?= $form->field($model, 'company')->dropDownList(DropDownItems::getItems('app\models\Company', 'company')) ?>
 
-    <?= $form->field($model, 'client_name')->dropDownList(DropDownItems::getItems('app\models\Customer', 'name', 'name')) ?>
+    <?php
+        $field = $form->field($model, 'client_name');
+        $options = [];
+        if ($model->disabledFields['client_name'])
+            $options = ['disabled' => 'disabled'];
+        $field->dropDownList(DropDownItems::getItems('app\models\Customer', 'name', 'name'), $options);
+        echo $field;
+    ?>
 
     <?= $form->field($model, 'work_type')->dropDownList(DropDownItems::getItems('app\models\WorkOrderType', 'work_order_type')) ?>
 

@@ -36,6 +36,7 @@ class WorkOrderSearch extends WorkOrder
 				],
 				'safe'
 			],
+            [['disabledFields'], 'safe'],
         ];
     }
 
