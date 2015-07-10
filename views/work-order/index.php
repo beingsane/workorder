@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="work-order-index">
 
 	<div class="table-info">
-		<div class="pull-left"><?= Html::a('Add', ['workorder/create'], ['class' => 'btn btn-success']) ?></div>
+		<div class="pull-left"><?= Html::a('Add', ['work-order/create'], ['class' => 'btn btn-success']) ?></div>
 		<div class="title pull-right"><?= Html::encode($this->title) ?></div>
 		
 		<div class="clearfix"></div>
